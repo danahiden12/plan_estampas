@@ -106,17 +106,25 @@ SELECT
     ARTICULO,
     DESCRIPCION,
     COLOR,
-    NULLIF(ESTAMPERIA, '#N/A') AS ESTAMPERIA,                                 -- Proveedores
-    TRY_CONVERT(date, NULLIF(MUESTRA_ENVIADA, '#N/A'))  AS MUESTRA_ENVIADA,   -- Posibles formatos inválidos desde Excel (ver análisis BLOQUE 6)
-    TRY_CONVERT(date, NULLIF(MUESTRA_RECIBIDA, '#N/A')) AS MUESTRA_RECIBIDA,  -- Posibles formatos inválidos desde Excel (ver análisis BLOQUE 6)
-    TRY_CONVERT(date, NULLIF(FECHA_APROBADO, '#N/A'))   AS FECHA_APROBADO,    -- Posibles formatos inválidos desde Excel (ver análisis BLOQUE 6)
-    NULLIF(APROBADO, '#N/A') AS APROBADO,                                     -- Estado muestrario
-    NULLIF(A_DESPACHO, '#N/A') AS A_DESPACHO,                                 -- Estado muestrario
-    TRY_CONVERT(int, NULLIF(CANTIDAD, '#N/A')) AS CANTIDAD                    -- Cantidad total por articulo
+
+    -- Proveedor
+    NULLIF(ESTAMPERIA, '#N/A') AS ESTAMPERIA,
+
+    -- Fechas (formato original CSV: dd/mm/yyyy → estilo 103)
+    TRY_CONVERT(date, NULLIF(MUESTRA_ENVIADA, '#N/A'), 103)  AS MUESTRA_ENVIADA,
+    TRY_CONVERT(date, NULLIF(MUESTRA_RECIBIDA, '#N/A'), 103) AS MUESTRA_RECIBIDA,
+    TRY_CONVERT(date, NULLIF(FECHA_APROBADO, '#N/A'), 103)   AS FECHA_APROBADO,
+
+    -- Estados
+    NULLIF(APROBADO, '#N/A')   AS APROBADO,
+    NULLIF(A_DESPACHO, '#N/A') AS A_DESPACHO,
+
+    -- Cantidad
+    TRY_CONVERT(int, NULLIF(CANTIDAD, '#N/A')) AS CANTIDAD
 
 FROM PLAN_ESTAMPAS;
 GO
-
+   
 /* =====================================================
    BLOQUE 4 — CALCULO DE TIEMPO DE PROCESOS
    creacion de view: VW_PLAN_ESTAMPAS_TIEMPOS
@@ -180,8 +188,15 @@ FROM PLAN_ESTAMPAS
 WHERE MUESTRA_RECIBIDA IS NOT NULL
   AND TRY_CONVERT(date, MUESTRA_RECIBIDA) IS NULL;
 
-  */
 
+    SELECT
+    MUESTRA_RECIBIDA,
+    FECHA_APROBADO,
+    DATEDIFF(DAY, MUESTRA_RECIBIDA, FECHA_APROBADO) AS DIFERENCIA_REAL    -- Query de diagnostico 
+FROM VW_PLAN_ESTAMPAS_LIMPIA                                              -- por diferencia de dias formato fecha
+WHERE DESCRIPCION LIKE '%ABRIGO%'
+
+*/
 
 /* =====================================================
    BLOQUE 7 — VIEW FINAL DE CONSUMO
