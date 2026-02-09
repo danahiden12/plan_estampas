@@ -65,7 +65,7 @@ select
     _2DA_CORRECCION,
     A_DESPACHO
 
-from PLAN_ESTAMPAS_I26
+from [dbo].[PLAN DE ESTAMPAS I26.xlsx - ESTAMPERIAS]
 
 UNION ALL
 
@@ -92,7 +92,7 @@ select
     COMENTARIO,
     _2DA_CORRECCION,
     A_DESPACHO
-from PLAN_ESTAMPAS_V26;
+from [dbo].[PLAN DE ESTAMPAS V26.xlsx - ESTAMPERIAS];
 
 
 /* =====================================================
