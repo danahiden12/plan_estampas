@@ -106,6 +106,7 @@ SELECT
     ARTICULO,
     DESCRIPCION,
     COLOR,
+    COMENTARIO,
 
     -- Proveedor
     NULLIF(ESTAMPERIA, '#N/A') AS ESTAMPERIA,
@@ -220,6 +221,7 @@ SELECT
     -- Fechas clave
     MUESTRA_ENVIADA,
     MUESTRA_RECIBIDA,
+    COMENTARIO,
     FECHA_APROBADO,
 
     -- Métricas de proceso
