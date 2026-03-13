@@ -41,6 +41,16 @@ El tablero permite visualizar de forma interactiva:
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Herramientas utilizadas
+
+SQL Server – limpieza y transformación de datos
+
+Qlik Sense – desarrollo del dashboard
+
+Canva – diseño de la presentación
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 PRESENTACION
 
 El análisis completo con insights y conclusiones puede verse en la presentación:
