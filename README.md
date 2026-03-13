@@ -39,9 +39,13 @@ El tablero permite visualizar de forma interactiva:
 3) Participación de proveedores por temporada
 4) Artículos con mayores retrasos en el proceso
 
-   
-
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PRESENTACION
+
+El análisis completo con insights y conclusiones puede verse en la presentación:
+
+https://www.linkedin.com/posts/danahiden_dataanalytics-dataanalyst-supplychain-activity-7438186132993114112-htpH?utm_source=share&utm_medium=member_desktop&rcm=ACoAACXWFoAB2WZdOWDo1ndiGH3RI_H5eOl3IPA
 
 
 
