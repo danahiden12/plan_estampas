@@ -2,8 +2,8 @@
 
 DESCRIPCION DEL PROYECTO
 
-Este proyecto analiza el proceso de desarrollo de muestrarios para colecciones de indumentaria desde dos enfoques:
-Desempeño de proveedores de estampería y bordado Y auditoría interna de tiempos de aprobación y liberación.
+Este proyecto analiza el proceso de desarrollo de muestrario para colecciones de indumentaria desde dos enfoques:
+Desempeño de proveedores de estampería y bordado y auditoría interna de tiempos de aprobación y liberación.
 El análisis compara dos temporadas: Verano 26 (V26) e Invierno 26 (I26), con el objetivo de identificar patrones en volumen de artículos, tiempos de desarrollo y tasa de aprobación de muestras. A partir de este enfoque integral, se busca detectar cuellos de botella, desvíos operativos y oportunidades de mejora tanto a nivel externo como interno.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -69,7 +69,7 @@ PRINCIPALES HALLAZGOS
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Herramientas utilizadas
+HERRAMIENTAS UTILIZADAS
 
 SQL SERVER – limpieza y transformación de datos
 QLIK SENSE – desarrollo del dashboard
